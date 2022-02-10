@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Gasto } from '../models/gasto.models';
+import { GastoService } from '../services/gasto.service';
 
 @Component({
   selector: 'app-presupuesto',
@@ -7,11 +9,17 @@ import { Component, OnInit } from '@angular/core';
 export class PresupuestoPage implements OnInit {
 
 public gastos: string[]=['Directos','Fijos','Variables'];
+public gastosList: Gasto []=[];
 public selectedValue: any;
 public monto: number;
 public resultados: string;
 public errResultados: string='light';
-constructor() { }
+public descripcion: string;
+public tipoGasto: string='';
+
+constructor(private gastosService: GastoService) {
+  this.gastosList = this.gastosService.getGastos();
+}
 
   ngOnInit() {
   }
@@ -22,19 +30,34 @@ customPopoverOption: any = {
   message: 'Solo seleccione un tipo de gasto'
 };
 
-cambioValor(value){
+cambioValor(value: any){
   console.log(value);
 }
+
 guardar(){
-  this.resultados ="";
-  if(this.monto!=null && this.selectedValue!=null){
-    this.errResultados = 'success';
-    this.resultados = 'Gasto seleccionado: '+this.selectedValue+' \nMonto: '+this.monto+'\n';
+    this.resultados ="";
+    if(this.monto!=null && this.selectedValue!=null && this.descripcion!= null){
+      this.errResultados = 'success';
+      this.resultados = 'Gasto seleccionado: '+this.selectedValue+' \nMonto: '+this.monto+'\n'+
+      'Descricion: '+this.descripcion;
+      let gasto: Gasto = {
+      descripcion: this.descripcion,
+      tipo: this.selectedValue,
+      monto: this.monto
+    }
+      this.gastosService.agregar(gasto);
+      this.gastosList = this.gastosService.getGastos();
+    }
+    else{
+      this.errResultados = 'danger';
+      this.resultados ="No a completado los campos del formulario";
+    }
   }
-  else{
-    this.errResultados = 'danger';
-    this.resultados = "No a completado los campos del formulario";
+
+  borrarGasto(idGasto: number){
+    this.gastosService.borrarGasto(idGasto);
+    this.gastosList = this.gastosService.getGastos();
   }
-}
+
 
 }
