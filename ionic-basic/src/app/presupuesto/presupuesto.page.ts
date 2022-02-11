@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Gasto } from '../models/gasto.model';
+import { GastosService } from '../services/gastos.service';
 
 @Component({
   selector: 'app-presupuesto',
@@ -11,7 +13,11 @@ export class PresupuestoPage implements OnInit {
   public monto: number;
   public resultados: string;
   public errResultados: string='light';
-  constructor() { }
+  public descripcion: string;
+  public tipoGasto: string='';
+  public gastosList: Gasto[]=[];
+  
+  constructor(private gastosService: GastosService) { }
 
   ngOnInit() {
   }
@@ -27,14 +33,27 @@ export class PresupuestoPage implements OnInit {
 
   guardar(){
     this.resultados ="";
-    if(this.monto!=null && this.selectedValue!=null){
+    if(this.monto!=null && this.selectedValue!=null && this.descripcion!= null){
       this.errResultados = 'success';
-      this.resultados = 'Gasto seleccionado: '+this.selectedValue+' \nMonto: '+this.monto+'\n';
+      this.resultados = 'Gasto seleccionado: '+this.selectedValue+' \nMonto: '+this.monto+'\n'+
+      'Descricion: '+this.descripcion;
+      let gasto: Gasto = {
+      descripcion: this.descripcion,
+      tipo: this.selectedValue,
+      monto: this.monto
+    }
+      this.gastosService.agregar(gasto);
+      this.gastosList = this.gastosService.getGastos();
     }
     else{
       this.errResultados = 'danger';
       this.resultados ="No a completado los campos del formulario";
     }
+  }
+
+  borrarGasto(idGasto: number){
+    this.gastosService.borrarGasto(idGasto);
+    this.gastosList = this.gastosService.getGastos();
   }
 
 
