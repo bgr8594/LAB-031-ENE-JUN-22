@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Alumno } from '../models/alumno.model';
 
 @Injectable({
   providedIn: 'root'
@@ -31,7 +32,8 @@ export class AlumnoService {
   }
 
   public actualizar(alumno: Alumno[]){
-    this.alumnos.filter((al) => al.id == alumno.id).map(al => {
+    this.alumnos.filter(
+      (al) => al.id == alumno.id).map(al => {
       al.matricula = alumno.matricula;
       al.nombre = alumno.nombre;
       });
