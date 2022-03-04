@@ -1,0 +1,86 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Receiver
+    </ion-title>
+  </ion-toolbar>
+  <ion-back-button defaultHref="inicio"></ion-back-button>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Receiver</ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-list>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+  <ion-label>
+    Usuario:
+  </ion-label>
+  <ion-item>
+  <p>{{ user | json }}</p>
+  </ion-item>
+</ion-col>
+</ion-row>
+</ion-grid>
+
+
+<ion-textarea>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+  <ion-label>
+      Lista:
+    </ion-label>
+  <ion-item>
+    <p>{{list | json}}</p>
+  </ion-item>
+</ion-col>
+</ion-row>
+</ion-grid>
+  
+</ion-textarea>
+
+
+
+
+<ion-textarea rows="10" cols="10">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+    <ion-label>
+      Personajes:
+    </ion-label>
+    <ion-item>
+      <ion-col size="5">
+        <ion-row size="8">
+      <p>{{personajes | json}}</p>
+        </ion-row>
+      </ion-col>
+    </ion-item>
+  </ion-col>
+  </ion-row>
+  </ion-grid>
+
+</ion-textarea>
+
+
+
+</ion-list>
+
+
+</ion-content>
+ 
+  
+   
+  
+
+
+
+
