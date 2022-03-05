@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>receiver</ion-title>
+  </ion-toolbar>
+  <ion-back-button defaultHref="inicio"></ion-back-button>
+</ion-header>
+
+<ion-content>
+  <ion-grid *ngIf="list.length>0">
+    <ion-row>
+      <ion-col size="4">Nombre</ion-col>
+      <ion-col size="5">Email</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let any of list">
+      <ion-col size="4">{{any.nombre}}</ion-col>
+      <ion-col size="5">{{any.email}}</ion-col>
+    </ion-row>
+  </ion-grid> 
+  <ion-grid *ngIf="personajes.length>0">
+    <ion-row>
+      <ion-col size="5">Nombre</ion-col>
+      <ion-col size="3">Altura</ion-col>
+      <ion-col size="3">Peso</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let Personaje of personajes">
+      <ion-col size="5">{{Personaje.name}}</ion-col>
+      <ion-col size="3">{{Personaje.height}}</ion-col>
+      <ion-col size="3">{{Personaje.mass}}</ion-col>
+    </ion-row>
+  </ion-grid>
+  <p>
+    {{user | json}}
+  </p>
+  <p>{{list | json}}</p>
+  <p>{{personajes | json}}</p>
+</ion-content>
