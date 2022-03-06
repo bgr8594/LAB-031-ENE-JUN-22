@@ -3,6 +3,8 @@
     <ion-title>detalle-receta</ion-title>
   </ion-toolbar>
   <ion-back-button defaultHref="/receta"></ion-back-button>
+<ion-header style="margin-top:40px;">
+  <ion-back-button (click)=navegar()></ion-back-button>
   <ion-title>{{receta.nombre}}</ion-title>
 </ion-header>
 
@@ -22,5 +24,5 @@
             </ion-list>
         </ion-col>
     </ion-row>
-  </ion-grid>
+</ion-grid>
 </ion-content>
