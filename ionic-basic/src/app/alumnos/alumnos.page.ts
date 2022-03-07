@@ -5,7 +5,7 @@ import { AlumnoService } from '../services/alumnos.service';
 @Component({
   selector: 'app-alumnos',
   templateUrl: './alumnos.page.html',
-  styleUrls: ['./alumnos.page.scss'],
+  //styleUrls: ['./alumnos.page.scss'],
 })
 export class AlumnosPage implements OnInit {
 
