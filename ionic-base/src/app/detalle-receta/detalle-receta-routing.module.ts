@@ -5,7 +5,7 @@ import { DetalleRecetaPage } from './detalle-receta.page';
 
 const routes: Routes = [
   {
-    path: '',
+    path: ':idReceta',
     component: DetalleRecetaPage
   }
 ];
