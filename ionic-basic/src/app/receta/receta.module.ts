@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { RecieverPageRoutingModule } from './reciever-routing.module';
+import { RecetaPageRoutingModule } from './receta-routing.module';
 
-import { RecieverPage } from './reciever.page';
+import { RecetaPage } from './receta.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RecieverPageRoutingModule
+    RecetaPageRoutingModule
   ],
-  declarations: [RecieverPage]
+  declarations: [RecetaPage]
 })
-export class RecieverPageModule {}
+export class RecetaPageModule {}
