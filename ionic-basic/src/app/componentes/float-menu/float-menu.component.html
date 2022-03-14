@@ -8,7 +8,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-menu side="start" content-id="main">
+<ion-menu side="start" content-id="main" (ionWillOpen)="onMenuOpen()">
   <ion-content id="menuFloat">
       <ion-list>
           <ion-menu-toggle *ngFor="let c of datosMenu">
