@@ -6,7 +6,7 @@ import { Alumno } from '../models/alumno.model';
 })
 export class AlumnoService {
 
-  private alumnos: Alumno[] = [];
+  private alumnos: Alumno[]= [];
 
   constructor() { }
 
@@ -31,11 +31,12 @@ export class AlumnoService {
     this.alumnos = alumnos;
   }
 
-  public actualizar(alumno: Alumno[]){
+  public actualizar(alumno: Alumno): Alumno[]{
     this.alumnos.filter(
-      (al) => al.id == alumno.id).map(al => {
-      al.matricula = alumno.matricula;
-      al.nombre = alumno.nombre;
+      (al)=>al.id==alumno.id
+      ).map(al=>{
+        al.matricula = alumno.matricula;
+        al.nombre = alumno.nombre;
       });
       return this.getAlumnos();
   }

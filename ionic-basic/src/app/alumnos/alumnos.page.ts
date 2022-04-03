@@ -60,7 +60,7 @@ export class AlumnosPage implements OnInit {
 
   public eliminar(id: number){
     this.alumnoService.borrarAlumno(id);
-    this.alumnos = this.alunoService.getAlumnos();
+    this.alumnos = this.alumnoService.getAlumnos();
   }
 
   public editar(alumno: Alumno){
