@@ -9,13 +9,13 @@ import { ServiceCService } from '../services/service-c.service';
 })
 export class InicioPage implements OnInit {
 
-  user = {nombre: 'Pedro Perez', uuid:"34523452345234523452345", email:"correo@gmail.com"};
+  user = {nombre: 'Benito Estudillo', uuid:"34523452345234523452345", email:"correo@gmail.com"};
 
   list: any[]=
   [
-    {nombre: 'Pedro Perez', uuid:"34523452345234523452345", email:"correo@gmail.com"},
-    {nombre: 'Pedro Perez', uuid:"34523452345234523452345", email:"correo@gmail.com"},
-    {nombre: 'Pedro Perez', uuid:"34523452345234523452345", email:"correo@gmail.com"}
+    {nombre: 'Benito Estudillo', uuid:"34523452345234523452345", email:"correo@gmail.com"},
+    {nombre: 'Benito Estudillo', uuid:"34523452345234523452345", email:"correo@gmail.com"},
+    {nombre: 'Benito Estudillo', uuid:"34523452345234523452345", email:"correo@gmail.com"}
   ];
 
   constructor(private router: Router,
