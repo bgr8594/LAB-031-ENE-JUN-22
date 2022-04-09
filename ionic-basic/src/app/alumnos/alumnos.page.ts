@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Alumno } from '../models/alumno.model';
 import { AlumnoService } from '../services/alumno.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-alumnos',
@@ -8,6 +9,14 @@ import { AlumnoService } from '../services/alumno.service';
   styleUrls: ['./alumnos.page.scss'],
 })
 export class AlumnosPage implements OnInit {
+
+  //
+  Alumno = new FormGroup({
+    matricula: new FormControl('', [Validators.required, Validators.minLength(7), Validators.maxLength(7) ]),
+    nombre: new FormControl('',  [Validators.required, Validators.minLength(10)]),
+  });
+
+  //
 
   alumnos: Alumno[];
   nombre: string;
@@ -29,6 +38,10 @@ export class AlumnosPage implements OnInit {
   }
 
   public guardar(){
+
+    this.matricula = this.Alumno.controls.matricula.value;
+    this.nombre = this.Alumno.controls.nombre.value;
+
     if( (this.nombre == undefined || this.nombre == '' ) || 
       (this.matricula == undefined || this.matricula == '') ) {
       this.error = true;
@@ -45,6 +58,8 @@ export class AlumnosPage implements OnInit {
     if(this.estado === 'guardar'){
       this.alumnoService.agregarAlumno(alumno);
       this.alumnos = this.alumnoService.getAlumnos();
+
+      this.Alumno.reset()
     }
     this.cancelar();
   }
