@@ -36,7 +36,9 @@ export class LoginPage implements OnInit {
     const user = await this.autSvc.onLogin(this.user);
     if(user!=null && user.code ==undefined){
       console.log('Successfully logged in!');
+      setTimeout(() => {
       this.router.navigate(['/home']);
+      }, 650);
     }
     else{
       if(user.code){
