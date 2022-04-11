@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FloatMenuComponent } from './float-menu/float-menu.component';
 
-@Component({
-  selector: 'app-componentes',
-  templateUrl: './componentes.component.html',
-  styleUrls: ['./componentes.component.scss'],
+
+
+@NgModule({
+  declarations: [FloatMenuComponent],
+  exports:[FloatMenuComponent],
+  imports: [
+    CommonModule
+  ]
 })
-export class ComponentesComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {}
-
-}
+export class ComponentesModule { }
