@@ -9,11 +9,12 @@ import { AlumnoService } from '../services/alumno.service';
 })
 export class AlumnosPage implements OnInit {
 
-  alumnos:Alumno[];
+  alumnos: Alumno[];
   nombre: string;
   matricula: string;
   estado: string;
   idActualizar: number;
+  // eslint-disable-next-line @typescript-eslint/no-inferrable-types
   error: boolean = false;
 
 
@@ -36,12 +37,14 @@ export class AlumnosPage implements OnInit {
   }
 
   public guardar(){
-    if( (this.nombre == undefined || this.nombre == '' ) || 
+    // eslint-disable-next-line eqeqeq
+    if( (this.nombre == undefined || this.nombre == '' ) ||
+      // eslint-disable-next-line eqeqeq
       (this.matricula == undefined || this.matricula == '') ) {
       this.error = true;
       return;
-    }  
-    let alumno: Alumno={
+    }
+    const alumno: Alumno={
       nombre: this.nombre,
       matricula: this.matricula
     };
@@ -63,12 +66,12 @@ export class AlumnosPage implements OnInit {
     this.error = false;
   }
 
-  public eliminar(id:number){
+  public eliminar(id: number){
     this.alumnoService.borrarAlumno(id);
     this.alumnos = this.alumnoService.getAlumos();
   }
 
-  public editar(alumno:Alumno){
+  public editar(alumno: Alumno){
     this.estado = 'actualizar';
     this.matricula = alumno.matricula;
     this.nombre = alumno.nombre;
