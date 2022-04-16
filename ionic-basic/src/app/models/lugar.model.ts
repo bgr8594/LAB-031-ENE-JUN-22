@@ -1,6 +1,6 @@
 export class Lugar {
     nombre: string;
-
+    id?: string;
     ubicacion?: {latitud: string; longitud: string};
   // eslint-disable-next-line @typescript-eslint/member-ordering
   static nombre: any;
