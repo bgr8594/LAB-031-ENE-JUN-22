@@ -1,0 +1,15 @@
+<ion-header>
+  <ioin-toolbar>
+    <ion-title>Errores</ion-title>
+  </ioin-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item>
+      <ion-label>ERROR</ion-label>:{{error}}
+    </ion-item>
+    <ion-item>
+      <ion-button (click)="close()">Cerrar</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
