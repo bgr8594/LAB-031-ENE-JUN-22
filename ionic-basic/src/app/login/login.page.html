@@ -5,21 +5,35 @@
 </ion-header>
 
 <ion-content padding>
+  <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
   <ion-item>
     <ion-label>
       Email
     </ion-label>
-    <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+    <ion-input type="email" formControlName="email"></ion-input>
+    <ion-text color="danger" *ngIf="hasError('email','email')"><h5>Debe ser un correo 
+      valido</h5>
+    </ion-text>
+    <ion-text color="danger" *ngIf="hasError('email','required')">
+      <h5>Campos requeridos</h5>
+    </ion-text>
   </ion-item>
   <ion-item>
     <ion-label>
       Password
     </ion-label>
-    <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+    <ion-input type="password" formControlName="password"></ion-input>
+    <ion-text color="danger" *ngIf="!ionicForm.valid && ionicForm.controls['password'].touched && !hasError('password','required')">
+      <h5>Maximo 6 caracteres</h5>
+    </ion-text>
+    <ion-text color="danger" *ngIf="hasError('password','requred')">
+      <h5>Campos requeridos</h5>
+    </ion-text>
   </ion-item>
   <ion-item-divider>
-    <ion-button size="large" (click)="onLogin()">Login</ion-button>
+
+    <ion-button size="large" type="submit">Login</ion-button>
     <ion-button size="large" routerLink="/register">New</ion-button>
   </ion-item-divider>
-
+</form>
 </ion-content>
