@@ -122,7 +122,6 @@ export class DestinosPage implements OnInit {
       positionInput.lng = this.longitud;
     }
 
-
     const modalAdd = await this.modalController.create({
       component: GooglemapsComponent,
       mode: 'ios',

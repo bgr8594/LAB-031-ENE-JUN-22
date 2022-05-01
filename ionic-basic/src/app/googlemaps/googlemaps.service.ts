@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
+
 declare var google: any;
 
 @Injectable({
@@ -44,5 +45,4 @@ export class GooglemapsService {
       renderer.appendChild(document.body, script);
     });
   }
-
 }
