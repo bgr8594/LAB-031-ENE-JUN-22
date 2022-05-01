@@ -11,7 +11,8 @@ export const environment = {
     storageBucket: "front-031-prueba-new.appspot.com",
     messagingSenderId: "119301288348",
     appId: "1:119301288348:web:8cee8dec7aea6268285859"
-  }
+  },
+  apikeyMaps: 'AIzaSyCp97I9KXUppZtbYc4AWGyRR8Wmpq195cs'
 };
 
 /*
