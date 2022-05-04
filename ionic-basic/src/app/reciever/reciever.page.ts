@@ -11,6 +11,7 @@ export class RecieverPage implements OnInit {
   user: any;
   list: any[];
   personajes: Personaje[];
+  
   constructor(private serviceCService: ServiceCService) { }
 
   ngOnInit() {

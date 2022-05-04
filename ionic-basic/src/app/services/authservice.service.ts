@@ -12,7 +12,6 @@ export class AuthserviceService {
   constructor(private afAuth: AngularFireAuth) { 
     afAuth.authState.subscribe(user => this.isLoged= user);
   }
-
     //login
   async onLogin(user: User){
     try{

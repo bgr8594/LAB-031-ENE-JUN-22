@@ -22,9 +22,9 @@ export class LoginPage implements OnInit {
     private modalCtrl: ModalController,
     private autSvc: AuthserviceService,
     private formBuilder: FormBuilder) { }
-  ngOnInit() {
+ 
+    ngOnInit() {
     this.buildForm();
-
   }
 
   async onLogin(){

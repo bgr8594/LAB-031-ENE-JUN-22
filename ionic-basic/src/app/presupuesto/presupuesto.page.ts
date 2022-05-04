@@ -16,12 +16,13 @@ export class PresupuestoPage implements OnInit {
   public descripcion: string;
   public tipoGasto: string='';
   public gasotsList: Gasto[]=[];
-  
 
   constructor(private gastosService: GastoService) { }
 
   ngOnInit() {
   }
+
+
   customPopoverOptions: any = {
     header: 'Seleccion de gasots',
     subHeader: 'Seleccione el tipo de gasto',
@@ -31,12 +32,11 @@ export class PresupuestoPage implements OnInit {
   cambioValor(value){
     console.log(value);
   }
+ 
   guardar(){
     this.resultados ="";
-    if(this.monto!=null && this.selectedValue!=null){
     if(this.monto!=null && this.selectedValue!=null && this.descripcion!= null){
       this.errResultados = 'success';
-      this.resultados = 'Gasto seleccionado: '+this.selectedValue+' \nMonto: '+this.monto+'\n';
       this.resultados = 'Gasto seleccionado: '+this.selectedValue+' \nMonto: '+this.monto+'\n'+
       'Descricion: '+this.descripcion;
       let gasto: Gasto = {
@@ -52,14 +52,10 @@ export class PresupuestoPage implements OnInit {
       this.resultados ="No a completado los campos del formulario";
     }
   }
-}
-  borrarGasto(idGasto: number){ 
+
+  borrarGasto(idGasto: number){
     this.gastosService.borrarGasto(idGasto);
     this.gasotsList = this.gastosService.getGastos();
   }
 
-
-
 }
-
-  

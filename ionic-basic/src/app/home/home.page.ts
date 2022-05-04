@@ -14,7 +14,9 @@ export class HomePage implements OnInit{
   constructor(private authSvc: AuthserviceService,
     private router: Router, 
     private afAuth: AngularFireAuth) {}
-  ngOnInit(): void {
+  
+  
+    ngOnInit(): void {
     this.afAuth.authState.subscribe(response=>{
       this.isLoged = response;
     })
