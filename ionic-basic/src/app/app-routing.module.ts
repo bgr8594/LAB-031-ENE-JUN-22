@@ -17,10 +17,6 @@ const routes: Routes = [
     loadChildren: () => import('./presupuesto/presupuesto.module').then( m => m.PresupuestoPageModule)
   },
   {
-    path: 'presupuesto2',
-    loadChildren: () => import('./presupuesto2/presupuesto2.module').then( m => m.Presupuesto2PageModule)
-  },
-  {
     path: 'alumnos',canActivate:[AuthGuard],
     loadChildren: () => import('./alumnos/alumnos.module').then( m => m.AlumnosPageModule)
   },
@@ -59,6 +55,10 @@ const routes: Routes = [
   {
     path: 'destinos',
     loadChildren: () => import('./destinos/destinos.module').then( m => m.DestinosPageModule)
+  },
+  {
+    path: 'destinos-api',canActivate:[AuthGuard],
+    loadChildren: () => import('./destinos-api/destinos-api.module').then( m => m.DestinosApiPageModule)
   },
 ];
 
