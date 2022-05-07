@@ -10,12 +10,16 @@ import { CompontentesModule } from './compontentes/compontentes.module';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import { environment } from 'src/environments/environment';
+import{AngularFirestoreModule} from 'angularfire2/firestore';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [CompontentesModule,BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule,
-  AngularFireModule.initializeApp(environment.firebaseConfig),AngularFireAuthModule],
+  imports: [CompontentesModule,BrowserModule, 
+    IonicModule.forRoot(), AppRoutingModule,
+    HttpClientModule,
+  AngularFireModule.initializeApp(environment.firebaseConfig),
+  AngularFireAuthModule,AngularFirestoreModule],
   providers: [NavParams,HttpClientModule,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

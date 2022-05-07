@@ -20,7 +20,7 @@ export class AlumnoService {
 
   public borrarAlumno(id: number){
     this.alumnos=
-    this.alumnos.filter((a1=>a1.id!=id));
+    this.alumnos.filter((al=>al.id!=id));
   }
 
   public getAlumnos(): Alumno[]{
@@ -33,10 +33,10 @@ export class AlumnoService {
 
   public actualizar(alumno:Alumno):Alumno[]{
     this.alumnos.filter(
-      (a1)=>a1.id==alumno.id
-    ).map(a1=>{
-      a1.matricula=alumno.matricula;
-      a1.nombre=alumno.nombre; 
+      (al)=>al.id==alumno.id
+    ).map(al=>{
+      al.matricula=alumno.matricula;
+      al.nombre=alumno.nombre; 
     });
     return this.getAlumnos();
   }
