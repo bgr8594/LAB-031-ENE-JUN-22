@@ -13,12 +13,13 @@ export class PresupuestoPage implements OnInit {
   public monto: number;
   public resultados: string;
   public errResultados: string='light';
- 
+  
   public descripcion: string;
   public tipoGasto: string='';
   public gasotsList: Gasto[]=[];
 
   constructor(private gastosService: GastoService) { }
+
   ngOnInit() {
   }
 
@@ -28,10 +29,11 @@ export class PresupuestoPage implements OnInit {
     subHeader: 'Seleccione el tipo de gasto',
     message: 'Solo seleccione un tipo de gasto'
   };
-
+  
   cambioValor(value){
     console.log(value);
   }
+
   guardar(){
     this.resultados ="";
     if(this.monto!=null && this.selectedValue!=null && this.descripcion!= null){
