@@ -16,8 +16,11 @@
       </ion-text>
     </ion-item>
     <ion-item-divider>
-      <ion-button type="submit" type="submit" [disabled]="!(ionicForm.valid)" color="primary" size="large">
-        Alta destino
+      <ion-button type="submit" type="submit" [disabled]="!(ionicForm.valid)" color="primary" size="larger">
+        {{estado}}
+      </ion-button>
+      <ion-button *ngIf="editando" type="button" color="primary" size="larger" (click)="cancelarEdicion()">
+        Cancelar
       </ion-button>
     </ion-item-divider>
   </form>
@@ -35,6 +38,12 @@
           Ubicacion
         </ion-text>
       </ion-col>
+      <ion-col>
+
+      </ion-col>
+      <ion-col>
+
+      </ion-col>
     </ion-row>
     <ion-row *ngFor="let lugar of destinos">
       <ion-col>
@@ -44,8 +53,14 @@
       </ion-col>
       <ion-col>
         <ion-text>
-          En construccion <!--{{lugar.nombre}}-->
+          {{lugar.ubicacion}}
         </ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-button color="primary" (click)="editarLugar(lugar.id, lugar)">Editar</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="danger" (click)="eliminarLugar(lugar.id)">Borrar</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
