@@ -75,6 +75,10 @@ const routes: Routes = [
     path: 'destinos',canActivate:[AuthGuard],
     loadChildren: () => import('./destinos/destinos.module').then( m => m.DestinosPageModule)
   },
+  {
+    path: 'destino-api',canActivate:[AuthGuard],
+    loadChildren: () => import('./destino-api/destino-api.module').then( m => m.DestinoApiPageModule)
+  },
 ];
 
 @NgModule({
