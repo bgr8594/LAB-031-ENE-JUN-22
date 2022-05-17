@@ -1,0 +1,6 @@
+{
+	"appId": "com.democapacitor.fcfm",
+	"appName": "ionic-base",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
