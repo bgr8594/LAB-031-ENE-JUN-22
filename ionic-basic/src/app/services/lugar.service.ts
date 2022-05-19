@@ -12,9 +12,10 @@ export class LugarService {
   altaLugar(lugar: Lugar){
     const lugarTemp: any ={
       nombre:lugar.nombre,
-      ubicacion: {longitud:'', latitud:''}
+      longitud:lugar.latitud, 
+      latitud:lugar.longitud
     };
-    this.dbFirestore.collection('lugar').add(lugarTemp);
+    return this.dbFirestore.collection('lugar').add(lugarTemp);
   }
 
   async getLugares(destinos: Lugar[]){
@@ -26,6 +27,8 @@ export class LugarService {
         let data: any = doc.data();
         let lugar: Lugar = new Lugar();
         lugar.nombre = data.nombre;
+        lugar.latitud = data.latitud;
+        lugar.longitud = data.longitud;
         console.log(doc.id);
         destinos.push(lugar);
       });
@@ -34,5 +37,17 @@ export class LugarService {
       console.log(err);
     });
 
+  }
+
+  getLugaresChanges(){
+    return this.dbFirestore.collection('lugar').snapshotChanges();
+  }
+
+  updateLugares(id: any, lugar: any){
+   return this.dbFirestore.collection('lugar').doc(id).update(lugar);
+  }
+
+  deleteLugar(id: any){
+    return this.dbFirestore.collection('lugar').doc(id).delete();
   }
 }

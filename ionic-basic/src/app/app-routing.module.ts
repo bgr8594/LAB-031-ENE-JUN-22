@@ -52,6 +52,10 @@ const routes: Routes = [
     path: 'admin', canActivate:[AuthGuard],
     loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
   },
+  {
+    path: 'destinos-api',
+    loadChildren: () => import('./destinos-api/destinos-api.module').then( m => m.DestinosApiPageModule)
+  },
   
 ];
 
