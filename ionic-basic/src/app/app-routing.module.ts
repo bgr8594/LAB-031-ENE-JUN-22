@@ -56,9 +56,10 @@ const routes: Routes = [
     path: 'destinos-api',
     loadChildren: () => import('./destinos-api/destinos-api.module').then( m => m.DestinosApiPageModule)
   },
+  
   {
-    path: 'googlemaps',
-    loadChildren: () => import('./googlemaps/googlemaps.module').then( m => m.GooglemapsPageModule)
+    path: 'galeria',
+    loadChildren: () => import('./galeria/galeria.module').then( m => m.GaleriaPageModule)
   },
   
 ];

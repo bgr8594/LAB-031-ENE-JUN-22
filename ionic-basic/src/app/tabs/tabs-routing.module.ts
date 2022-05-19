@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { TabsPage } from './tabs.page';
-
 const routes: Routes = [
   {
     path: '',
@@ -14,8 +12,8 @@ const routes: Routes = [
       }
       ,
       {
-        path: 'recetas',
-        loadChildren: () => import('../receta/receta.module').then(m=>m.RecetaPageModule)
+        path: 'galeria',
+        loadChildren: () => import('../galeria/galeria.module').then(m=>m.GaleriaPageModule)
       },
       {
         path: 'presupuesto',
@@ -34,7 +32,6 @@ const routes: Routes = [
     pathMatch: 'full'
   }
 ];
-
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
