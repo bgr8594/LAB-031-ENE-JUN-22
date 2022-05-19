@@ -51,6 +51,14 @@ const routes: Routes = [
     path: 'admin', canActivate:[AuthGuard],
     loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
   },
+  {
+    path: 'camara',
+    loadChildren: () => import('./camara/camara.module').then( m => m.AppModule)
+  },
+  {
+    path: 'destinos', canActivate:[AuthGuard],
+    loadChildren: () => import('./destinos/destinos.module').then( m => m.DestinosPageModule)
+  },
 ];
 
 @NgModule({

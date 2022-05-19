@@ -72,8 +72,14 @@ icono: 'restaurant-outline'},
 icono: 'cash-outline'},
 {nombre:'inicio',enlace:'/inicio',
 icono:'navigate-outline'},
+{nombre:'Turismo',enlace:'/destino',
+icono:'airplane'},
 {nombre:'Tabs',enlace:'/tabs',
-icono:'folder-outline'}
+icono:'folder-outline'},
+{nombre: 'login', enlace:'/login',
+icono:'log-in-outline'},
+{nombre:'logout', enlace: '/home',
+icono:'log-out-outline'}
       ];
     } else{
       this.datosMenu=[
