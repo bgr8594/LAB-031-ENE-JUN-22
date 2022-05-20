@@ -41,6 +41,10 @@ const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
   },
   {
+    path: 'admin', canActivate:[AuthGuard],
+    loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
+  },
+  {
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
@@ -49,14 +53,13 @@ const routes: Routes = [
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'admin', canActivate:[AuthGuard],
-    loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
+    path: 'destinos', canActivate:[AuthGuard],
+    loadChildren: () => import('./destinos/destinos.module').then( m => m.DestinosPageModule)
   },
   {
     path: 'destinos-api',
     loadChildren: () => import('./destinos-api/destinos-api.module').then( m => m.DestinosApiPageModule)
   },
-  
   {
     path: 'galeria',
     loadChildren: () => import('./galeria/galeria.module').then( m => m.GaleriaPageModule)

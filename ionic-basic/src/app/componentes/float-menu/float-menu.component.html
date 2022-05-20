@@ -14,8 +14,8 @@
             <ion-menu-toggle *ngFor="let c of datosMenu">
                 <ion-item (click)="navegar(c.enlace)">
                     <ion-icon name='{{c.icono}}'></ion-icon>
-                    <ion-item (click)="navegar(c.enlace, c.nombre)">
-                    </ion-item>
+                    <ion-label>{{ c.nombre }}</ion-label>
+                </ion-item>
             </ion-menu-toggle>
         </ion-list>
     </ion-content>

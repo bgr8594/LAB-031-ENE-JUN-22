@@ -14,6 +14,9 @@ export class RegisterPage implements OnInit {
 
   constructor(private autSvc: AuthserviceService, private router: Router) { }
 
+  ngOnInit() {
+  }
+
   async onRegister(){
     const user = await this.autSvc.onRegister(this.user);
     if(user){
@@ -21,8 +24,7 @@ export class RegisterPage implements OnInit {
       this.router.navigate(['/login']);
     }
   }
-  ngOnInit() {
-  }
+ 
 
   
 
