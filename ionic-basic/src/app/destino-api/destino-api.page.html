@@ -1,11 +1,11 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>destinos</ion-title>
+    <ion-title>Destinos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <form [fromGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
+  <from [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
     <ion-item>
       <ion-label>
         Destino
@@ -17,9 +17,9 @@
     </ion-item>
     <ion-item-divider>
       <ion-button type="submit" type="submit" [disabled]="!(ionicForm.valid)" color="primary" size="large">{{estado}}</ion-button>
-      <ion-button *ngIf="editando" type="button" color="danger" size="large" (click)="cancelarEdicion()">Cancelar</ion-button>
+      <ion-button *ngIf="editando" type="button" color="danger" size="large" (click)="cancelar()">Cancelar</ion-button>
     </ion-item-divider>
-  </form>
+  </from>
 
   <ion-item-divider></ion-item-divider>
   <ion-grid>
@@ -34,22 +34,28 @@
           Ubicacion
         </ion-text>
       </ion-col>
+      <ion-col>
+
+        </ion-col>
+        <ion-col>
+
+      </ion-col>
     </ion-row>
-    <ion-row *ngFor="let lugar of destinos">
+    <ioin-row *ngFor="let lugar of destinos">
       <ion-col>
         <ion-text>
           {{lugar.nombre}}
         </ion-text>
       </ion-col>
       <ion-col>
-        <ion-text *ngIf="lugar.latitud">
-          latitud:{{lugar.latitud}}, longitud:{{lugar.longitud}}
+        <ion-text *nfIf="lugar.latitud">
+          latitud:{{lugar.latitud}},longitud{{lugar.longitud}}
         </ion-text>
         <ion-text *ngIf="!lugar.latitud">
         </ion-text>
       </ion-col>
       <ion-col>
-        <ion-button color="primary" (click)="editarLugar(lugar.id, lugar)">editar</ion-button>
+        <ion-button color="primary"(click)="editarLugar(lugar.id, lugar)">editar</ion-button>
       </ion-col>
       <ion-col>
         <ion-button color="danger" (click)="eliminarLugar(lugar.id)">borrar</ion-button>

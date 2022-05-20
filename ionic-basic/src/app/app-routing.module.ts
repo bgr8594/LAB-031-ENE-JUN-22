@@ -52,13 +52,14 @@ const routes: Routes = [
     loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
   },
   {
-    path: 'camara',
-    loadChildren: () => import('./camara/camara.module').then( m => m.AppModule)
-  },
-  {
     path: 'destinos', canActivate:[AuthGuard],
     loadChildren: () => import('./destinos/destinos.module').then( m => m.DestinosPageModule)
   },
+  {
+    path: 'destino-api',
+    loadChildren: () => import('./destino-api/destino-api.module').then( m => m.DestinoApiPageModule)
+  },
+  
 ];
 
 @NgModule({
