@@ -3,4 +3,4 @@ export interface Receta{
     nombre: string;
     image: string;
     ingredientes: string[];
-}
+} 

@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Alumno } from '../models/alumno.model';
+import {Alumno} from '../models/alumno.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AlumnoService {
 
-  private alumnos: Alumno[]= [];
+  private alumnos: Alumno[]=[];
 
   constructor() { }
   
@@ -41,5 +41,4 @@ export class AlumnoService {
     });
     return this.getAlumos();
   }
-
 }

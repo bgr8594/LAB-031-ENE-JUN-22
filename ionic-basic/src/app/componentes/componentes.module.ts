@@ -5,7 +5,7 @@ import { FloatMenuComponent } from './float-menu/float-menu.component';
 
 
 @NgModule({
-  declarations:[FloatMenuComponent],
+  declarations: [FloatMenuComponent],
   exports:[FloatMenuComponent],
   imports: [
     CommonModule

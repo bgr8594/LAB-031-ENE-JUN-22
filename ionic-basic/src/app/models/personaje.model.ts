@@ -14,5 +14,6 @@ export interface Personaje{
     species: any[];
     starships: string[];
     url:  string;
-    vehicles: string[]
+    vehicles: string[];
 }
+

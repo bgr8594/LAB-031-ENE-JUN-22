@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ServiceCService } from '../services/service-c.service';
+import { ServicioCService } from '../services/servicio-c.service';
 
 @Component({
   selector: 'app-inicio',
@@ -8,25 +8,25 @@ import { ServiceCService } from '../services/service-c.service';
   styleUrls: ['./inicio.page.scss'],
 })
 export class InicioPage implements OnInit {
-  user = {nombre:'Pedro Perez', uuid:"34523452345234523452345", email:"correo@gmail.com"};
 
-  list: any[]=
+  user = {nombre:"Pedro Perez", id:"1", email:"correo@gmail.com"};
+
+  list=
   [
-    {nombre:'Pedro Perez', uuid:"34523452345234523452345", email:"correo@gmail.com"},
-    {nombre:'Pedro Perez', uuid:"34523452345234523452345", email:"correo@gmail.com"},
-    {nombre:'Pedro Perez', uuid:"34523452345234523452345", email:"correo@gmail.com"}
+    {nombre:"Juan", id:"1", email:"correo@gmail.com"},
   ];
 
   constructor(private router: Router,
-    private serviceCService: ServiceCService) { }
+    private serviceCService: ServicioCService) { }
 
-  ngOnInit() {
+ ngOnInit() {
   }
 
-gotReceiver(){
+  gotReceiver(){
     this.serviceCService.sendObjectSource(this.user);
     this.serviceCService.sendListSource(this.list);
-
     this.router.navigate(['/reciever']);
+    
   }
+  
 }
