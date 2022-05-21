@@ -1,5 +1,6 @@
 import { Component, OnInit, Renderer2, Input, ElementRef, Inject, ViewChild } from '@angular/core';
-import { Geolocation } from '@capacitor/geolocation';
+//import { Geolocation } from '@capacitor/geolocation';
+import { Geolocation } from '@ionic-native/geolocation';
 import { GooglemapsService } from './googlemaps.service';
 import { DOCUMENT } from '@angular/common';
 import { ModalController } from '@ionic/angular'
