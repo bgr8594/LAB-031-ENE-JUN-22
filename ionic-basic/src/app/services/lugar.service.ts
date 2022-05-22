@@ -15,7 +15,8 @@ export class LugarService {
   altaLugar(lugar: Lugar){
     const lugarTemp: any ={
       nombre:lugar.nombre,
-      ubicacion: {longitud:'', latitud:''}
+      lugar.latitud = data.latitud;
+        lugar.longitud = data.longitud;
     };
     return this.dbFirestore.collection('lugar').add(lugarTemp);
   }
@@ -29,6 +30,8 @@ export class LugarService {
         const data: any = doc.data();
         const lugar: Lugar = new Lugar();
         lugar.nombre = data.nombre;
+        lugar.latitud = data.latitud;
+        lugar.longitud = data.longitud;
         console.log(doc.id);
         destinos.push(lugar);
       });
