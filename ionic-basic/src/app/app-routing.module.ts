@@ -79,6 +79,10 @@ const routes: Routes = [
     path: 'destino-api',canActivate:[AuthGuard],
     loadChildren: () => import('./destino-api/destino-api.module').then( m => m.DestinoApiPageModule)
   },
+  {
+    path: 'galeria',
+    loadChildren: () => import('./galeria/galeria.module').then( m => m.GaleriaPageModule)
+  },
 ];
 
 @NgModule({
