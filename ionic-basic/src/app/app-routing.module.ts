@@ -66,6 +66,10 @@ const routes: Routes = [
     path: 'detinos-api',canActivate:[AuthGuard],
     loadChildren: () => import('./detinos-api/detinos-api.module').then( m => m.DetinosApiPageModule)
   },
+  {
+    path: 'galeria',
+    loadChildren: () => import('./galeria/galeria.module').then( m => m.GaleriaPageModule)
+  },
 
 ];
 
