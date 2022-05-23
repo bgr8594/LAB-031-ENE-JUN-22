@@ -24,7 +24,7 @@ export class LugaresapiService {
   borrarLugarApi(id: string): Observable<any>{
     return this.http.delete(`${this.basePath}/${id}/delete`, {});
   }
-
+ 
   editarLugarApi(id: string, lugar: Lugar): Observable<any>{
     return this.http.put(`${this.basePath}/${id}/update`,lugar,{});
   }
