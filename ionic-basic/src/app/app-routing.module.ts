@@ -65,7 +65,7 @@ const routes: Routes = [
   },
   {
     path: 'googlemaps',
-    loadChildren: () => import('./googlemaps/googlemaps.module').then( m => m.GooglemapsPageModule)
+    loadChildren: () => import('./googlemaps/googlemaps.module').then( m => m.GooglemapsModule)
   },
   {
     path: 'galeria',
