@@ -24,7 +24,7 @@ export class AlumnoService {
     this.alumnos.filter((al=>al.id!=id));
   }
 
-  public getAlumos(): Alumno[]{
+  public getAlumnos(): Alumno[]{
     return this.alumnos;
   }
 
@@ -39,7 +39,7 @@ export class AlumnoService {
       al.matricula=alumno.matricula;
       al.nombre = alumno.nombre;
     });
-    return this.getAlumos();
+    return this.getAlumnos();
   }
 
 }

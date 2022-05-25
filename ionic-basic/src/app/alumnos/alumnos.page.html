@@ -5,28 +5,39 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-      <ion-item>
-          <ion-label>
-              Matricula:
-          </ion-label>
-          <ion-input type="text" [(ngModel)]="matricula" placeholder="Ingrese la matricula"></ion-input>
-      </ion-item>
-      <ion-item>
-          <ion-label>
-              Nombre:
-          </ion-label>
-          <ion-input type="text" [(ngModel)]="nombre" placeholder="Ingrese nombre del alumno"></ion-input>
-      </ion-item>
-      <ion-item>
-          <ion-button type="button" (click)="guardar()">{{estado}}</ion-button>
-          <ion-button *ngIf="estado==='actualizar'" type="button" (click)="cancelar()">Cancelar</ion-button>
-          <ion-text *ngIf="error" color="danger">
-              <h6>Debe ingresar nombre y matricula para {{estado}}</h6>
-          </ion-text>
-      </ion-item>
-      <ion-item *ngIf="alumnos.length>0">
-          <app-datos-alumno [alumnosList]="alumnos" (eliminar)="eliminar($event)" (editar)="editar($event)"></app-datos-alumno>
-      </ion-item>
-  </ion-list>
+    <form [formGroup]="alumnoForm" (ngSubmit)="guardarForm()" novalidate>
+    <ion-list>
+        <ion-item>
+            <ion-label>
+                Matricula:
+            </ion-label>
+            <ion-input type="text" formControlName="matricula" placeholder="Ingrese la matricula"></ion-input>
+            <ion-text color="danger" *ngIf="!alumnoForm.valid && alumnoForm.controls['matricula'].touched && hasError('matricula','matricula') ">
+                <h5>Maximo 7 numeros</h5>
+            </ion-text>
+            <ion-text color="danger" *ngIf="hasError('matricula','required')">
+                <h5>Campo requerido</h5>
+            </ion-text>
+        </ion-item>
+        <ion-item>
+            <ion-label>
+                Nombre:
+            </ion-label>
+            <ion-input type="text"  formControlName="nombre" placeholder="Ingrese nombre del alumno"></ion-input>
+            <ion-text color="danger" *ngIf="!alumnoForm.valid && hasError('nombre','required')">
+                <h5>Campo requerido</h5>
+            </ion-text>
+        </ion-item>
+        <ion-item>
+            <ion-button type="submit" [disabled]="!alumnoForm.valid" (click)="guardar()">{{estado}}</ion-button>
+            <ion-button *ngIf="estado==actualizar" type="button" (click)="cancelar()">Cancelar</ion-button>
+            <ion-text *ngIf="error" color="danger">
+                <h6>Debe ingresar nombre y matricula para {{estado}}</h6>
+            </ion-text>
+        </ion-item>
+        <ion-item *ngIf="alumnos.length>0">
+            <app-datos-alumno [alumnosList]="alumnos" (eliminar)="eliminar($event)" (editar)="editar($event)"></app-datos-alumno>
+        </ion-item>
+    </ion-list>
+    </form>
 </ion-content>
