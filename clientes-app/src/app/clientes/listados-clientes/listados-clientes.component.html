@@ -5,9 +5,6 @@
 
 <table>
     <tr *ngFor="let cliente of clientes">
-        <td>{{cliente.nombre}}</td>
-        <td>{{cliente.curp}}</td>
-        <td>{{cliente.direccion}}</td>
-        <td>{{cliente.sexo}}</td>
+        <app-item-cliente [cliente]="cliente" (borrarCliente)="onBorrarCliente"></app-item-cliente>
     </tr>
 </table>
