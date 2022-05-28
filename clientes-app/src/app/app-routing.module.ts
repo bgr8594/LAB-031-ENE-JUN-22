@@ -1,21 +1,34 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Routes, RouterModule } from '@angular/router';
-import { AltaClienteComponent } from './clientes/alta-cliente/alta-cliente.component';
-import { ListadosClientesComponent } from './clientes/listados-clientes/listados-clientes.component';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
-const routes : Routes =[
-  {path: 'altaClientes', component: AltaClienteComponent},
-  {path: 'listadoClientes', component : ListadosClientesComponent}
+const routes: Routes = [
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: '',
+    redirectTo: 'alumnos',
+    pathMatch: 'full'
+  },
+  {
+    path: 'alumnos',
+    children: [
+      {
+        path:'',
+        loadChildren: () => import('./alumnos/alumnos.module').then( m => m.AlumnosPageModule)
+      },
+      {
+        path:':idAlumno',
+        loadChildren: () => import('./alumnos/detalle-alumno/detalle-alumno.module').then( m => m.DetalleAlumnoPageModule)
+      }
+    ]
+  },
 ];
 
 @NgModule({
-  declarations: [],
   imports: [
-    
-    RouterModule.forRoot(routes),
-    CommonModule
-
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
   exports: [RouterModule]
 })

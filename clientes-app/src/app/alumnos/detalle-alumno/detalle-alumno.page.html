@@ -1,0 +1,50 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-button slot="start">
+            <ion-back-button defaultHref="/alumnos"></ion-back-button>
+        </ion-button>
+        <ion-title>{{alumno.nombre}}</ion-title>
+        <ion-button slot="end" (click)="borrar()">
+            <ion-icon name="trash"></ion-icon>
+        </ion-button>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-text>
+                    Edad
+                </ion-text>
+            </ion-col>
+            <ion-col>
+                <ion-text>
+                    Matricula
+                </ion-text>
+            </ion-col>
+            <ion-col>
+                <ion-text>
+                    Correo
+                </ion-text>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-text>
+                    {{alumno.edad}}
+                </ion-text>
+            </ion-col>
+            <ion-col>
+                <ion-text>
+                    {{alumno.matricula}}
+                </ion-text>
+            </ion-col>
+            <ion-col>
+                <ion-text>
+                    {{alumno.correo}}
+                </ion-text>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

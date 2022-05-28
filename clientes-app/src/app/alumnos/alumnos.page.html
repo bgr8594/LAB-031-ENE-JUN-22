@@ -1,0 +1,50 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>alumnos</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let alumno of alumnos" [routerLink]="['/alumnos', alumno.id]">
+            {{alumno.nombre}}
+        </ion-item>
+    </ion-list>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-text>
+                    Name
+                </ion-text>
+            </ion-col>
+            <ion-col>
+                <ion-text>
+                    height
+                </ion-text>
+            </ion-col>
+            <ion-col>
+                <ion-text>
+                    mass
+                </ion-text>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngFor="let personaje of personajes">
+            <ion-col>
+                <ion-text>
+                    {{personaje.name}}
+                </ion-text>
+            </ion-col>
+            <ion-col>
+                <ion-text>
+                    {{personaje.mass}}
+                </ion-text>
+            </ion-col>
+            <ion-col>
+                <ion-text>
+                    {{personaje.height}}
+                </ion-text>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
