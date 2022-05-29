@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireAuth, AngularFireAuthModule} from 'angularfire2/auth';
 import { environment } from 'src/environments/environment';
+import { AngularFirestore, AngularFirestoreModule } from 'angularfire2/firestore';
 
 
 import { AppComponent } from './app.component';
@@ -16,7 +17,8 @@ import { IonicRouteStrategy } from '@ionic/angular';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [ComponentesModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,AngularFireModule.initializeApp(environment.firebaseConfig)],
+  imports: [ComponentesModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,AngularFireModule.initializeApp(environment.firebaseConfig)
+  ,AngularFireAuthModule, AngularFirestore],
   providers: [AngularFireAuth,HttpClientModule,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

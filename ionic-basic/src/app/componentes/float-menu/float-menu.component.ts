@@ -12,7 +12,7 @@ import { MenuService } from 'src/app/services/menu.service';
 })
 export class FloatMenuComponent implements OnInit {
 
-  datosMenu: MenuElement[] =[
+  /*datosMenu: MenuElement[] =[
     {nombre: 'home',enlace:'/home',
     icono:'home-outline'},
     {nombre: 'Alumnos',enlace:'/alumnos',
@@ -21,9 +21,9 @@ export class FloatMenuComponent implements OnInit {
     icono:'log-in-outline'},
     {nombre: 'logout',enlace:'/home',
     icono:'log-out-outline'}
-  ];
+  ];*/
   isLoged: any;
-  /*datosMenu: MenuElement[] =[
+  datosMenu: MenuElement[] =[
     {nombre: 'home',enlace:'/home',
     icono:'home-outline'},
     {nombre: 'Alumnos',enlace:'/alumnos',
@@ -34,9 +34,11 @@ export class FloatMenuComponent implements OnInit {
     icono:'cash-outline'},
     {nombre: 'inicio',enlace:'/inicio',
     icono:'navigate-outline'},
+    {nombre: 'Turismo',enlace:'/destinos',
+    icono:'airplane'},
     {nombre: 'Tabs',enlace:'/tabs',
     icono:'folder-outline'}
-  ];*/
+  ];
   
   constructor(private router: Router, private authGuard: AuthGuard,
     private menuService: MenuService,
