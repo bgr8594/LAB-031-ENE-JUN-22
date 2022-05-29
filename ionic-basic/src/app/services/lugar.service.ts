@@ -11,7 +11,8 @@ export class LugarService {
   altaLugar(lugar: Lugar){
     const lugarTemp: any ={
       nombre:lugar.nombre,
-      ubicacion: {longitud:'', latitud:''}
+      longitud:lugar.latitud, 
+      latitud:lugar.longitud
     };
     return 
     this.dbFirestore.collection('lugar').add(lugarTemp);
@@ -25,6 +26,8 @@ export class LugarService {
       snapshot.forEach(doc=>{
         let data: any = doc.data();
         let lugar: Lugar = new Lugar();
+        lugar.latitud = data.latitud;
+        lugar.longitud = data.longitud;
         lugar.nombre = data.nombre;
         console.log(doc.id);
         destinos.push(lugar);
