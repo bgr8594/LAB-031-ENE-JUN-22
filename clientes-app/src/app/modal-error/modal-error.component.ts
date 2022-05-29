@@ -1,4 +1,3 @@
-   
 import { Component, OnInit } from '@angular/core';
 import { ModalController, NavParams } from '@ionic/angular';
 
@@ -19,4 +18,4 @@ export class ModalErrorComponent implements OnInit {
       'dismissed': true
     });
   }
-}v
+}

@@ -42,7 +42,7 @@ positionSet: any;
     this.init();
   }
 
-  
+
   async init(){
     this.googleMapsService.init(this.renderer, this.document).
     then(()=>{

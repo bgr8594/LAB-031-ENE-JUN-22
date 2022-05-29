@@ -14,7 +14,7 @@ export class GooglemapsService {
   constructor() { }
 
   init(renderer: any, document: any){
-    
+
     return new Promise((resolve, reject) => {
       if(this.mapsloaded){
         console.log('google is preview loaded');
@@ -35,7 +35,6 @@ export class GooglemapsService {
         resolve(true);
         return;
       };
-
 
       if(this.apikey){
         script.src = 'https://maps.googleapis.com/maps/api/js?key='+this.apikey+'&callback=mapInit';

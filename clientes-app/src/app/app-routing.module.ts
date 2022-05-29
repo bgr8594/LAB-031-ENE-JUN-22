@@ -6,6 +6,7 @@ const routes: Routes = [
     path: 'home', canActivate:[AuthGuard],
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
+
   {
     path: '',
     redirectTo: 'recetas',
@@ -31,7 +32,8 @@ const routes: Routes = [
   {
     path: 'recetas', canActivate:[AuthGuard],
     loadChildren: () => import('./recetas/recetas.module').then( m => m.RecetasPageModule)
-  },  {
+  },
+  {
     path: 'tabs', canActivate:[AuthGuard],
     loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
   },
@@ -55,6 +57,12 @@ const routes: Routes = [
     path: 'galeria',  canActivate:[AuthGuard],
     loadChildren: () => import('./galeria/galeria.module').then( m => m.GaleriaPageModule)
   },
+  {
+    path: 'segment-button',
+    loadChildren: () => import('./segment-button/segment-button.module').then( m => m.SegmentButtonPageModule)
+  },
+
+
 
 
 

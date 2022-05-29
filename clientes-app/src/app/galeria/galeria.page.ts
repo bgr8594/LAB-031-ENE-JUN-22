@@ -18,7 +18,7 @@ export class GaleriaPage implements OnInit {
     await this.photoService.loadSaved();
   }
 
-  
+
   public async showActionSheet(photo: UserPhoto, position: number) {
     const actionSheet = await this.actionSheetController.create({
       header: 'Photos',

@@ -4,6 +4,7 @@
     </ion-toolbar>
 </ion-header>
 
+
 <ion-content padding>
     <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
         <ion-item>
@@ -20,7 +21,9 @@
         </ion-item>
         <ion-item>
             <ion-label>
+
                 Password
+
             </ion-label>
             <ion-input type="password" formControlName="password"></ion-input>
             <ion-text color="danger" *ngIf="!ionicForm.valid && ionicForm.controls['password'].touched && !hasError('password','required')">
